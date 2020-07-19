@@ -76,6 +76,8 @@ class GameScene: SKScene {
             let location = touch.location(in: self)
             main.run(SKAction.moveTo(x: location.x, duration: 0.2))
         }
+        
+
     }
     
     
@@ -98,5 +100,13 @@ class GameScene: SKScene {
         } else if ball.position.y >= enemy.position.y + 70 {
             addScore(playerWhoWon: main)
         }
+        
+        if score[0] == 7 || score[1] == 7 {
+            let gameOverScene = GameOverScene(fileNamed: "GameOverScene")
+            gameOverScene?.scaleMode = .aspectFill
+
+            self.view!.presentScene(gameOverScene!, transition: SKTransition.flipVertical(withDuration: 1.0))
+        }
+
     }
 }
