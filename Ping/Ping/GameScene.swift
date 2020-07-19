@@ -90,7 +90,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         
-        enemy.run(SKAction.moveTo(x: ball.position.x, duration: 1.0))
+        enemy.run(SKAction.moveTo(x: ball.position.x, duration: 0.5))
         
         if ball.position.y <= main.position.y - 70 {
             addScore(playerWhoWon: enemy)
